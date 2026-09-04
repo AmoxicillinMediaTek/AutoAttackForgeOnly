@@ -3,8 +3,9 @@ import net.minecraft.client.KeyMapping;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventcb.SubscribeEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.api.distmarker.Dist;
 
 @Mod.EventBusSubscriber(modid = "autoattack", bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class AutoAttackForgeHandler {
@@ -16,15 +17,12 @@ public class AutoAttackForgeHandler {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null || mc.level == null) return;
 
-        // Condition check
+        KeyMapping attackKey = mc.options.keyAttack;
         if (shouldAutoAttack(mc)) {
-            KeyMapping attackKey = mc.options.keyAttack;
-            
-            // Set it down
             attackKey.setDown(true);
-            
-            // Force the game to register the click event next frame
-            ((AccessorKeyMapping) attackKey).setClickCount(((AccessorKeyMapping) attackKey).getClickCount() + 1);
+            attackKey.click();
+        } else {
+            attackKey.setDown(false);
         }
     }
 

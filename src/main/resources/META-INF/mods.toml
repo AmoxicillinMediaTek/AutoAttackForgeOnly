@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="autoattack"
+version="${file.jarVersion}"
+displayName="Auto Attack"
+authors="BloxCrypto"
+description='''Automatically pulses the attack key while a living entity is under the crosshair.'''
+
+[[dependencies.autoattack]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.autoattack]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+ordering="NONE"
+side="BOTH"
