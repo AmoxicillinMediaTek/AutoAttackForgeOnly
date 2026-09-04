@@ -26,7 +26,6 @@ public class AutoAttackForgeHandler {
             "key.categories.misc"
     );
     private static boolean enabled = true;
-    private static boolean lastToggleState = true;
 
     @SubscribeEvent
     public static void onRegisterKeyMappings(RegisterKeyMappingsEvent event) {
@@ -58,7 +57,7 @@ public class AutoAttackForgeHandler {
             return;
         }
 
-        if (shouldAutoAttack(minecraft)) {
+        if (shouldAutoAttack(minecraft) && minecraft.player.getAttackStrengthScale(0.0F) >= 1.0F) {
             attackKey.setDown(true);
             attackKey.click(attackKey.getKey());
         } else {
