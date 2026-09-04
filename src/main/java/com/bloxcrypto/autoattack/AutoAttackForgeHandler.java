@@ -1,8 +1,10 @@
 package com.bloxcrypto.autoattack;
 
 import com.mojang.blaze3d.platform.InputConstants;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.api.distmarker.Dist;
@@ -24,6 +26,7 @@ public class AutoAttackForgeHandler {
             "key.categories.misc"
     );
     private static boolean enabled = true;
+    private static boolean lastToggleState = true;
 
     @SubscribeEvent
     public static void onRegisterKeyMappings(RegisterKeyMappingsEvent event) {
@@ -43,6 +46,10 @@ public class AutoAttackForgeHandler {
 
         if (TOGGLE_KEY.consumeClick()) {
             enabled = !enabled;
+            minecraft.player.displayClientMessage(
+                    Component.literal("AutoAttack: " + (enabled ? "On" : "Off")).withStyle(enabled ? ChatFormatting.GREEN : ChatFormatting.RED),
+                    true
+            );
         }
 
         KeyMapping attackKey = minecraft.options.keyAttack;
