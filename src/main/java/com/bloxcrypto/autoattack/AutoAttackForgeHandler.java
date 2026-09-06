@@ -51,17 +51,13 @@ public class AutoAttackForgeHandler {
             );
         }
 
-        KeyMapping attackKey = minecraft.options.keyAttack;
         if (!enabled) {
-            attackKey.setDown(false);
             return;
         }
 
         if (shouldAutoAttack(minecraft) && minecraft.player.getAttackStrengthScale(0.0F) >= 1.0F) {
-            attackKey.setDown(true);
+            KeyMapping attackKey = minecraft.options.keyAttack;
             attackKey.click(attackKey.getKey());
-        } else {
-            attackKey.setDown(false);
         }
     }
 

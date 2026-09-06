@@ -1,5 +1,7 @@
 # Auto Attack Forge Mod
 
+Maintainer: AmoxicillinMediaTek
+
 A minimal Minecraft Forge 1.20.1 mod that pulses the client attack key once per client tick while a living mob or player is under the crosshair.
 
 ## Build
@@ -15,6 +17,6 @@ From the project directory:
 gradle build
 ```
 
-The built jar is created in `build/libs/`. Install it in a Forge 1.20.1 client with Forge `47.2.0` or newer within the declared dependency range.
+The built jar is created in `build/libs/`. Install it in a Forge 1.20.1 client with Forge `47.4.23`.
 
 The attack pulse is disabled while a screen is open or the game is paused.

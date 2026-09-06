@@ -5,7 +5,7 @@ plugins {
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
 }
 
-group = 'com.bloxcrypto'
+group = 'com.amoxicillinmediatek'
 version = '1.0.0'
 
 base {
@@ -52,11 +52,11 @@ jar {
     manifest {
         attributes([
             'Specification-Title'     : 'autoattack',
-            'Specification-Vendor'    : 'BloxCrypto',
+            'Specification-Vendor'    : 'AmoxicillinMediaTek',
             'Specification-Version'   : '1',
             'Implementation-Title'    : project.name,
             'Implementation-Version'  : project.jar.archiveVersion,
-            'Implementation-Vendor'   : 'BloxCrypto'
+            'Implementation-Vendor'   : 'AmoxicillinMediaTek'
         ])
     }
 }

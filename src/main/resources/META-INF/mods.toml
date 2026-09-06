@@ -6,7 +6,7 @@ license="All Rights Reserved"
 modId="autoattack"
 version="${file.jarVersion}"
 displayName="Auto Attack"
-authors="BloxCrypto"
+authors="AmoxicillinMediaTek"
 description='''Automatically pulses the attack key while a living entity is under the crosshair.'''
 
 [[dependencies.autoattack]]
