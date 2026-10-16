@@ -52,11 +52,11 @@ jar {
     manifest {
         attributes([
             'Specification-Title'     : 'autoattack',
-            'Specification-Vendor'    : 'AmoxicillinMediaTek',
+            'Specification-Vendor'    : 'Amoxicillin.MediaTek',
             'Specification-Version'   : '1',
             'Implementation-Title'    : project.name,
             'Implementation-Version'  : project.jar.archiveVersion,
-            'Implementation-Vendor'   : 'AmoxicillinMediaTek'
+            'Implementation-Vendor'   : 'Amoxicillin.MediaTek'
         ])
     }
 }
